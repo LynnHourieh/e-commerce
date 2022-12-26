@@ -16,13 +16,16 @@ use App\Http\Controllers\ForgetController;
 |
 */
 
+//PUBLIC ROUTES
+Route::post("/login",[AuthController::class,"Login"]);
+Route::post("/register",[AuthController::class,"Register"]);
+// Route::post("/logout",[AuthController::class,"logout"]);
+Route::post("/forgetpassword",[ForgetController::class,"ForgetPassword"]);
+Route::post("/resetpassword",[ForgetController::class,"ResetPassword"]);
+
+//PRIVATE ROUTES
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post("/login",[AuthController::class,"Login"]);
 
-Route::post("/register",[AuthController::class,"Register"]);
-
-Route::post("/forgetpassword",[ForgetController::class,"ForgetPassword"]);
-Route::post("/resetpassword",[ForgetController::class,"ResetPassword"]);

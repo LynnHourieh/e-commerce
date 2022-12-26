@@ -1,0 +1,5 @@
+php artisan cache:clear - Flush the application cache
+
+php artisan config:cache - Create a cache file for faster configuration loading. This is for configuration cache. This command will clear the configuration cache before it creates. More details
+
+php artisan config:clear - Remove the configuration cache file

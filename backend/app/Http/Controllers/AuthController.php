@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
-
-use Illuminate\Support\Facades\Hash;
 use Exception;
-use Illuminate\Http\Request;
 use App\Models\User;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\RegisterRequest;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 use Laravel\Sanctum\NewAccessToken;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\RegisterRequest;
 
 class AuthController extends Controller
 {
@@ -59,4 +60,15 @@ class AuthController extends Controller
             "user" => $user,
         ]);
     }
+    
+    // public function logout()
+    // {
+    //     auth()->user()->tokens->each(function ($token, $key) {
+    //         $token->delete();
+    //     });
+    //     return response()->json([
+    //            'message' => 'Logged out successfully!',
+    //            'status_code' => 200
+    //        ], 200);
+    // }
 }
